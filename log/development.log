@@ -8,3 +8,421 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 24ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 7760)
 
 
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:50:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 377)
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4308)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:50:53 -0300
+  
+ArgumentError ('StaticPages' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:9:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:51:03 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 185.5ms | Allocations: 97064)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 0.0ms | Allocations: 97833)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/bash/Desktop/Projects/e-commerce/app/assets/builds
+  /home/bash/Desktop/Projects/e-commerce/app/assets/config
+  /home/bash/Desktop/Projects/e-commerce/app/assets/images
+  /home/bash/Desktop/Projects/e-commerce/app/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/stimulus-rails-1.3.4/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/turbo-rails-2.0.16/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actiontext-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actiontext-7.1.5.1/app/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actioncable-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/activestorage-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actionview-7.1.5.1/app/assets/javascripts
+  /home/bash/Desktop/Projects/e-commerce/app/javascript
+  /home/bash/Desktop/Projects/e-commerce/vendor/javascript
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/images):
+  
+sprockets (4.2.2) lib/sprockets/resolve.rb:62:in `resolve!'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:427:in `resolve'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:216:in `process_require_directive'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:32:in `block in call'
+/home/bash/.rvm/rubies/ruby-3.3.0/lib/ruby/3.3.0/set.rb:501:in `each_key'
+/home/bash/.rvm/rubies/ruby-3.3.0/lib/ruby/3.3.0/set.rb:501:in `each'
+sprockets (4.2.2) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:51:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.4ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 204.9ms | Allocations: 101467)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.0ms | Allocations: 103969)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-sprockets' with type 'application/javascript'
+Checked in these paths: 
+  /home/bash/Desktop/Projects/e-commerce/app/assets/builds
+  /home/bash/Desktop/Projects/e-commerce/app/assets/config
+  /home/bash/Desktop/Projects/e-commerce/app/assets/images
+  /home/bash/Desktop/Projects/e-commerce/app/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/jquery-rails-4.6.0/vendor/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/stimulus-rails-1.3.4/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/turbo-rails-2.0.16/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actiontext-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actiontext-7.1.5.1/app/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actioncable-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/activestorage-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actionview-7.1.5.1/app/assets/javascripts
+  /home/bash/Desktop/Projects/e-commerce/app/javascript
+  /home/bash/Desktop/Projects/e-commerce/vendor/javascript):
+  
+sprockets (4.2.2) lib/sprockets/resolve.rb:62:in `resolve!'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:427:in `resolve'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:216:in `process_require_directive'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:32:in `block in call'
+/home/bash/.rvm/rubies/ruby-3.3.0/lib/ruby/3.3.0/set.rb:501:in `each_key'
+/home/bash/.rvm/rubies/ruby-3.3.0/lib/ruby/3.3.0/set.rb:501:in `each'
+sprockets (4.2.2) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:52:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.4ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 241.6ms | Allocations: 104695)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.0ms | Allocations: 107114)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /home/bash/Desktop/Projects/e-commerce/app/assets/builds
+  /home/bash/Desktop/Projects/e-commerce/app/assets/config
+  /home/bash/Desktop/Projects/e-commerce/app/assets/images
+  /home/bash/Desktop/Projects/e-commerce/app/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/jquery-rails-4.6.0/vendor/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/stimulus-rails-1.3.4/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/turbo-rails-2.0.16/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actiontext-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actiontext-7.1.5.1/app/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actioncable-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/activestorage-7.1.5.1/app/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/actionview-7.1.5.1/app/assets/javascripts
+  /home/bash/Desktop/Projects/e-commerce/app/javascript
+  /home/bash/Desktop/Projects/e-commerce/vendor/javascript
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/bash/.rvm/gems/ruby-3.3.0@e-commerce/gems/bootstrap-sass-3.4.1/assets/images):
+  
+sprockets (4.2.2) lib/sprockets/resolve.rb:62:in `resolve!'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:427:in `resolve'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:216:in `process_require_directive'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:32:in `block in call'
+/home/bash/.rvm/rubies/ruby-3.3.0/lib/ruby/3.3.0/set.rb:501:in `each_key'
+/home/bash/.rvm/rubies/ruby-3.3.0/lib/ruby/3.3.0/set.rb:501:in `each'
+sprockets (4.2.2) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:53:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.5ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 375.4ms | Allocations: 147327)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.0ms | Allocations: 151059)
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:53:38 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 20144)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 21070)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:53:56 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 91)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 20086)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 20974)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:54:07 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 20087)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 20957)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:54:15 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 951)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1356)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:55:00 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3524)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4392)
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:55:09 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 20081)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 20963)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 19:55:51 -0300
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.2ms | Allocations: 91)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 19826)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 20701)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-03 20:04:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.erb within layouts/application
+  Rendered static_pages/home.erb within layouts/application (Duration: 0.3ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 344.3ms | Allocations: 168677)
+Completed 200 OK in 352ms (Views: 346.8ms | ActiveRecord: 0.0ms | Allocations: 172141)
+
+
