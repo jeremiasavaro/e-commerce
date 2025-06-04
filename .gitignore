@@ -10,6 +10,17 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
+/log/
+/tmp/
+/public/assets/
+/db/database.yml
+config/
+node_modules/
+*.log
+*.swp
+coverage/
+*.gem
+.DS_Store
 
 # Ignore all logfiles and tempfiles.
 /log/*
