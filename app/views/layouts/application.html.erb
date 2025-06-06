@@ -9,9 +9,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen">
     <%= render 'layouts/navbar' %>
-    <main>
+    <main class="flex-grow">
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>

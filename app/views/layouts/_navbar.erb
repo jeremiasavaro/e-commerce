@@ -8,8 +8,8 @@
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-6">
-                <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Inicio</a>
-                <a href="#vehiculos" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Vehículos</a>
+                <%= link_to "Inicio", root_path, class:"text-gray-700 hover:text-blue-600 transition-colors font-medium"  %>
+                <%= link_to "Vehículos", vehicles_path, class: "text-gray-700 hover:text-blue-600 transition-colors font-medium" %>
                 <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Servicios</a>
                 <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contacto</a>
             </nav>

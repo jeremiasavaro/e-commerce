@@ -78,15 +78,12 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 btn-hover flex items-center justify-center">
+                        <%= link_to vehicles_path, class: "bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 btn-hover flex items-center justify-center" do %>
                             Ver Inventario
                             <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </button>
-                        <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-all duration-300">
-                            Agendar Cita
-                        </button>
+                        <% end %>
                     </div>
 
                     <div class="grid grid-cols-3 gap-8 pt-8">
@@ -126,7 +123,7 @@
                 </span>
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Nuestra Selección Premium</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Explora nuestra colección cuidadosamente seleccionada de vehículos de lujo y alta gama
+                    Explora nuestra colección seleccionada de vehículos 0km.
                 </p>
             </div>
 
@@ -277,13 +274,13 @@
                 </div>
             </div>
 
-            <div class="text-center mt-12">
-                <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors flex items-center mx-auto">
+            <div class="text-center mt-12 w-62 mx-auto">
+                <%= link_to vehicles_path, class: "border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors flex items-center mx-auto" do %>
                     Ver Todos los Vehículos
                     <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                </button>
+                <% end %>
             </div>
         </div>
     </section>
@@ -301,7 +298,7 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 text-center group animate-on-scroll">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors duration-300">
@@ -314,22 +311,6 @@
                     </h3>
                     <p class="text-gray-600 leading-relaxed">
                         Amplia selección de vehículos nuevos y seminuevos de las mejores marcas
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 text-center group animate-on-scroll">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                        <svg class="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-                        Servicio Técnico
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Mantenimiento y reparación especializada con técnicos certificados
                     </p>
                 </div>
 
@@ -382,9 +363,6 @@
                         <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
-                    </button>
-                    <button class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-lg transition-all duration-300">
-                        Solicitar Cotización
                     </button>
                 </div>
             </div>
