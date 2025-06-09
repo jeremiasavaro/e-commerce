@@ -1,17 +1,67 @@
-<%= form_with(model: vehicle, class: "contents") do |form| %>
-  <% if vehicle.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-xl">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Añadir Nuevo Vehículo</h2>
 
-      <ul class="list-disc ml-6">
-        <% vehicle.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+      <%= form_with(model: vehicle, class: "space-y-6") do |f| %>
+        <% if vehicle.errors.any? %>
+          <div class="bg-red-100 text-red-700 p-4 rounded-md">
+            <h3 class="font-bold mb-2"><%= pluralize(vehicle.errors.count, "error") %> impidieron guardar este vehículo:</h3>
+            <ul class="list-disc ml-6">
+              <% vehicle.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+        <!-- Nombre -->
+        <div>
+          <%= f.label :name, "Nombre", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+        </div>
+
+        <!-- Descripción -->
+        <div>
+          <%= f.label :description, "Descripción", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_area :description, rows: 3, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+        </div>
+
+        <!-- Precio -->
+        <div>
+          <%= f.label :price, "Precio", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.number_field :price, step: 1000, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+        </div>
+
+        <!-- Año -->
+        <div>
+          <%= f.label :year, "Año", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.number_field :year, min: 1900, max: Date.current.year + 1, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+        </div>
+
+        <!-- Color -->
+        <div>
+          <%= f.label :color, "Color", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :color, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+        </div>
+
+        <!-- Transmisión -->
+        <div>
+          <%= f.label :transmition, "Transmisión", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.select :transmition, ["Manual", "Automática"], include_blank: "Seleccionar...", class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+        </div>
+
+        <!-- Imagen -->
+        <div>
+          <%= f.label :image, "Imagen", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.file_field :image, class: "mt-1 block w-full text-gray-700" %>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center">
+          <%= f.submit "Guardar Vehículo", class: "bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</section>
