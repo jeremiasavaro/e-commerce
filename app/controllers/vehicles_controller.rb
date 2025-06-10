@@ -1,25 +1,37 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[ show edit update destroy ]
 
-  # GET /vehicles or /vehicles.json
   def index
+    @value_options = []
+    if params[:filter_by].present?
+      case params[:filter_by]
+      when 'color'
+        @value_options = Vehicle.distinct.pluck(:color).sort
+      when 'year'
+        @value_options = Vehicle.distinct.pluck(:year).sort.reverse
+      when 'transmition'
+        @value_options = ['Automática', 'Manual']
+      end
+    end
     @vehicles = Vehicle.all
+    if params[:filter_by].present? && params[:filter_value].present?
+      @vehicles = @vehicles.where("#{params[:filter_by]} = ?", params[:filter_value])
+    end
+
+    @pagy, @vehicles = pagy(@vehicles, items: 12)
   end
 
-  # GET /vehicles/1 or /vehicles/1.json
   def show
+    @vehicle = Vehicle.find(params[:id])
   end
 
-  # GET /vehicles/new
   def new
     @vehicle = Vehicle.new
   end
 
-  # GET /vehicles/1/edit
   def edit
   end
 
-  # POST /vehicles or /vehicles.json
   def create
     @vehicle = Vehicle.new(vehicle_params)
 
@@ -34,7 +46,6 @@ class VehiclesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /vehicles/1 or /vehicles/1.json
   def update
     respond_to do |format|
       if @vehicle.update(vehicle_params)
@@ -47,7 +58,6 @@ class VehiclesController < ApplicationController
     end
   end
 
-  # DELETE /vehicles/1 or /vehicles/1.json
   def destroy
     @vehicle.destroy!
 
@@ -58,12 +68,10 @@ class VehiclesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_vehicle
       @vehicle = Vehicle.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def vehicle_params
       params.require(:vehicle).permit(:image , :name, :description, :price, :year, :color, :transmition)
     end

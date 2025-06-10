@@ -1,29 +1,76 @@
-<% content_for :title, "Vehicles" %>
+<%# app/views/vehicles/index.html.erb %>
 
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Vehicles</h1>
-    <%= link_to "New vehicle", new_vehicle_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
-  </div>
-
-  <div id="vehicles" class="min-w-full divide-y divide-gray-200 space-y-5">
-    <% if @vehicles.any? %>
-      <% @vehicles.each do |vehicle| %>
-        <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">
-          <%= render vehicle %>
-          <div class="w-full sm:w-auto flex flex-col sm:flex-row space-x-2 space-y-2">
-            <%= link_to "Show", vehicle, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-            <%= link_to "Edit", edit_vehicle_path(vehicle), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-            <%= button_to "Destroy", vehicle, method: :delete, class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <p class="text-center my-10">No vehicles found.</p>
-    <% end %>
-  </div>
+<div class="bg-white border-b">
+    <div class="container mx-auto px-4 py-4">
+        <nav class="flex items-center space-x-2 text-sm text-gray-600">
+            <a href="/" class="hover:text-blue-600 transition-colors">Inicio</a>
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <span class="text-gray-900 font-medium">Inventario</span>
+        </nav>
+    </div>
 </div>
+
+<section class="py-12">
+    <div class="container mx-auto pt-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Nuestros Vehículos</h1>
+
+        <%= turbo_frame_tag "filters" do %>
+          <%= form_with(url: vehicles_path, method: :get, class: "bg-white rounded-lg shadow-md p-4 mb-8 flex flex-wrap items-center justify-between gap-4") do |form| %>
+            <div class="flex flex-wrap items-center gap-4">
+              <span class="text-gray-700 font-medium">Filtrar por:</span>
+
+              <%= form.select :filter_by,
+                  options_for_select([
+                      ['Año', 'year'],
+                      ['Color', 'color'],
+                      ['Transmisión', 'transmition']
+                  ], params[:filter_by]),
+                  { include_blank: 'Sin filtro' },
+                  class: "border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                  onchange: 'this.form.requestSubmit()' %>
+              <% if @value_options.any? %>
+                <%= form.select :filter_value,
+                    options_for_select(@value_options, params[:filter_value]),
+                    { include_blank: 'Seleccione un valor' },
+                    class: "border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+              <% end %>
+            </div>
+
+            <div class="flex items-center space-x-2">
+              <%= form.submit "Filtrar", class: "bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors cursor-pointer" %>
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if @vehicles.any? %>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <% @vehicles.each do |vehicle| %>
+                    <%= render partial: "vehicles/vehicle_preview", locals: { vehicle: vehicle } %>
+                <% end %>
+            </div>
+        <% else %>
+            <div class="text-center py-16">
+                <p class="text-gray-600 text-lg">No se encontraron vehículos que coincidan con tu búsqueda.</p>
+            </div>
+        <% end %>
+
+        <div class="flex justify-center mt-12">
+            <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+        </div>
+    </div>
+</section>
+
+<style>
+    .car-card {
+        transition: all 0.3s ease;
+    }
+    .car-card:hover {
+        transform: translateY(-8px);
+    }
+    .car-image {
+        transition: all 0.5s ease;
+    }
+    .car-card:hover .car-image {
+        transform: scale(1.05);
+    }
+</style>

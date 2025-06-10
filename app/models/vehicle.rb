@@ -20,10 +20,5 @@ class Vehicle < ApplicationRecord
     unless image.byte_size <= 2.megabytes
       errors.add(:image, "es demasiado grande. Debe ser menor de 2 MB")
     end
-
-    acceptable_types = ["image/jpeg", "image/png", "image/webp"]
-    unless acceptable_types.include?(image.content_type)
-      errors.add(:image, "debe ser JPEG, PNG o WEBP")
-    end
   end
 end

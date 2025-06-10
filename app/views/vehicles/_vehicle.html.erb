@@ -1,233 +1,126 @@
-<div id="<%= dom_id vehicle %>" class="w-full sm:w-auto my-5 space-y-5">
+<div class="bg-white border-b">
+    <div class="container mx-auto px-4 py-4">
+        <nav class="flex items-center space-x-2 text-sm text-gray-600">
+            <a href="/" class="hover:text-blue-600 transition-colors">Inicio</a>
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <a href="/inventory" class="hover:text-blue-600 transition-colors">Inventario</a>
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="text-gray-900 font-medium"><%= vehicle.name %></span>
+        </nav>
+    </div>
 </div>
 
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'fade-in-left': 'fadeInLeft 0.8s ease-out',
-                        'fade-in-right': 'fadeInRight 0.8s ease-out',
-                        'zoom-in': 'zoomIn 0.5s ease-out',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        fadeInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        fadeInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        zoomIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.9)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-        .btn-hover:hover {
-            transform: scale(1.05);
-        }
-        .gallery-thumb {
-            transition: all 0.3s ease;
-        }
-        .gallery-thumb:hover {
-            transform: scale(1.1);
-        }
-        .gallery-thumb.active {
-            border: 3px solid #2563eb;
-        }
-        .feature-card {
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-    <!-- Breadcrumb -->
-    <div class="bg-white border-b">
-        <div class="container mx-auto px-4 py-4">
-            <nav class="flex items-center space-x-2 text-sm text-gray-600">
-                <a href="#" class="hover:text-blue-600 transition-colors">Inicio</a>
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                <a href="#" class="hover:text-blue-600 transition-colors">Inventario</a>
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                <span class="text-gray-900 font-medium">BMW Serie 3 2024</span>
-            </nav>
+<div class="container mx-auto px-4 py-8">
+    <div class="grid lg:grid-cols-2 gap-12">
+        <div class="space-y-4 animate-fade-in-left">
+            <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg">
+                <img id="main-image"
+                     src="<%= url_for(vehicle.image) %>"
+                     alt="Imagen de <%= vehicle.name %>"
+                     class="w-full h-96 lg:h-[500px] object-cover">
+            </div>
         </div>
-    </div>
 
-    <!-- Main Content -->
-    <div class="container mx-auto px-4 py-8">
-        <div class="grid lg:grid-cols-2 gap-12">
-            <div class="space-y-4">
-                <!-- Main Image -->
-                <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg">
-                    <img id="main-image"
-                         src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
-                         alt="BMW Serie 3 2024"
-                         class="w-full h-96 lg:h-[500px] object-cover">
-                </div>
-
-                <!-- Thumbnail Gallery -->
-                <div class="grid grid-cols-6 gap-2">
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=150&q=80"
-                         alt="Vista frontal"
-                         class="gallery-thumb active w-full h-16 object-cover rounded-lg cursor-pointer border-2 border-transparent">
-                </div>
+        <div class="space-y-8">
+            <div class="animate-fade-in-right">
+                <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2"><%= vehicle.name %></h1>
+                <p class="text-gray-600 mb-4"><%= vehicle.description %></p>
             </div>
 
-            <!-- Product Details -->
-            <div class="space-y-8">
-                <!-- Header Info -->
-                <div class="animate-fade-in-right">
-                    <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">BMW Serie 3 2024</h1>
-                    <p class="text-gray-600 mb-4">Sedán de lujo con tecnología avanzada y rendimiento excepcional</p>
+            <div class="bg-white p-6 rounded-xl shadow-lg animate-fade-in-up">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-3xl lg:text-4xl font-bold text-blue-600">$<%= number_with_delimiter(vehicle.price, delimiter: ".") %></p>
+                    </div>
                 </div>
-
-                <!-- Price -->
-                <div class="bg-white p-6 rounded-xl shadow-lg animate-fade-in-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <p class="text-3xl lg:text-4xl font-bold text-blue-600">$45,000</p>
+                <!-- Financing Options -->
+                <div class="border-t pt-4">
+                    <p class="text-sm text-gray-600 mb-2">Opciones de financiamiento:</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm">Desde $650/mes</span>
+                            <span class="text-sm text-blue-600">72 meses</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm">Desde $850/mes</span>
+                            <span class="text-sm text-blue-600">48 meses</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Quick Specs -->
-                <div class="grid grid-cols-2 gap-4 animate-fade-in-up">
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                        <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <p class="font-semibold">2024</p>
-                        <p class="text-sm text-gray-600">Año</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                        <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                        <p class="font-semibold">0 km</p>
-                        <p class="text-sm text-gray-600">Kilometraje</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                        <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
-                        </svg>
-                        <p class="font-semibold">Gasolina</p>
-                        <p class="text-sm text-gray-600">Combustible</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center">
-                        <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <p class="font-semibold">Automática</p>
-                        <p class="text-sm text-gray-600">Transmisión</p>
-                    </div>
+            <div class="grid grid-cols-2 gap-4 animate-fade-in-up">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center feature-card">
+                    <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <p class="font-semibold"><%= vehicle.year %></p>
+                    <p class="text-sm text-gray-600">Año</p>
                 </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center feature-card">
+                    <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343a2 2 0 01-1.414-.586l-2.828-2.828a2 2 0 00-1.414-.586H7a2 2 0 00-2 2v4a2 2 0 002 2z"></path></svg>
+                    <p class="font-semibold"><%= vehicle.color %></p>
+                    <p class="text-sm text-gray-600">Color</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center feature-card">
+                    <svg class="h-8 w-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <p class="font-semibold"><%= vehicle.transmition %></p>
+                    <p class="text-sm text-gray-600">Transmisión</p>
+                </div>
+            </div>
 
-                <!-- Action Buttons -->
-                <div class="space-y-4 animate-fade-in-up">
-                    <button class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition-all btn-hover">
-                        Consultanos por este vehículo!
-                    </button>
-                </div>
+            <div class="space-y-4 animate-fade-in-up">
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition-all btn-hover">
+                    ¡Consultanos por este vehículo!
+                </button>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        // Image gallery functionality
-        const images = [
-            'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-            'https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-            'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-            'https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-            'https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80',
-            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80'
-        ];
-
-        let currentImageIndex = 0;
-
-        function changeImage(index) {
-            currentImageIndex = index;
-            document.getElementById('main-image').src = images[index];
-            document.getElementById('current-image').textContent = index + 1;
-
-            // Update active thumbnail
-            document.querySelectorAll('.gallery-thumb').forEach((thumb, i) => {
-                if (i === index) {
-                    thumb.classList.add('active');
-                } else {
-                    thumb.classList.remove('active');
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                animation: {
+                    'fade-in-up': 'fadeInUp 0.6s ease-out',
+                    'fade-in-left': 'fadeInLeft 0.8s ease-out',
+                    'fade-in-right': 'fadeInRight 0.8s ease-out',
+                },
+                keyframes: {
+                    fadeInUp: {
+                        '0%': { opacity: '0', transform: 'translateY(30px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' }
+                    },
+                    fadeInLeft: {
+                        '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0)' }
+                    },
+                    fadeInRight: {
+                        '0%': { opacity: '0', transform: 'translateX(30px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0)' }
+                    },
                 }
-            });
+            }
         }
+    }
+</script>
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            changeImage(currentImageIndex);
-        }
-
-        function previousImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            changeImage(currentImageIndex);
-        }
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
-
+<style>
+    .btn-hover {
+        transition: all 0.3s ease;
+    }
+    .btn-hover:hover {
+        transform: scale(1.05);
+    }
+    .feature-card {
+        transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+</style>
