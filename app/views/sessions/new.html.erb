@@ -1,0 +1,7 @@
+<h1>Acceso de Gerente</h1>
+
+<%= form_with url: admin_login_path, method: :post do %>
+  <%= label_tag :password, "Contraseña" %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Entrar" %>
+<% end %>

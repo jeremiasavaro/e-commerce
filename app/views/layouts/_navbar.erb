@@ -3,11 +3,12 @@
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
             <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold text-gray-900">TikiTaka</span>
+                <span class="text-xl font-bold text-gray-900">Auto Elite</span>
             </div>
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-6">
+                <%= link_to 'Admin', admin_login_path, id: 'admin-link', style: 'display: none;' %>
                 <%= link_to "Inicio", root_path, class:"text-gray-700 hover:text-blue-600 transition-colors font-medium"  %>
                 <%= link_to "Vehículos", vehicles_path, class: "text-gray-700 hover:text-blue-600 transition-colors font-medium" %>
                 <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Servicios</a>

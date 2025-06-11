@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[ show edit update destroy ]
+  before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @value_options = []
@@ -74,5 +75,11 @@ class VehiclesController < ApplicationController
 
     def vehicle_params
       params.require(:vehicle).permit(:image , :name, :description, :price, :year, :color, :transmition)
+    end
+
+    def require_admin
+      unless session[:admin]
+        redirect_to root_path, alert: "No tenés permisos para acceder a esta sección"
+      end
     end
 end
